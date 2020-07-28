@@ -1,30 +1,62 @@
 <script>
-	export let name;
+  const screens = {
+    home: "home",
+    recipe: "recipe",
+  };
+  let hovered = false;
+  let screen = screens.home;
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  :global(body) {
+    padding: 0;
+  }
+  main {
+    background-color: rgb(255, 225, 144);
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  h1 {
+    margin: 0;
+    color: rgb(70, 28, 28);
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 1em;
+    font-size: 50px;
+    text-align: center;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  button {
+    background: crimson;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    transition: padding 150ms ease-in-out, font-size 100ms ease;
+  }
+
+  button:hover {
+    font-size: 1.2em;
+  }
+  button:hover:active {
+    font-size: 1.17em;
+    background-color: crimson;
+  }
 </style>
+
+<main>
+  {#if screen == screens.home}
+    <h1>Taco Maker</h1>
+    <button>Get My Taco!</button>
+  {:else if screen == screens.recipe}
+    <div>recipe goes here</div>
+  {/if}
+</main>
