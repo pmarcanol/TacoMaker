@@ -53,9 +53,6 @@
 </script>
 
 <style>
-  main {
-    margin: 20px;
-  }
 
   .left,
   .right {
@@ -68,9 +65,11 @@
   .right {
     right: 1em;
   }
+
+
 </style>
 
-<main>
+<div>
   {#if !loading}
     {#if currentStep > 0}
       <button class="left" on:click={() => moveStep(currentStep - 1)}>
@@ -94,4 +93,4 @@
       </button>
     {/if}
   {:else}loading{/if}
-</main>
+</div>

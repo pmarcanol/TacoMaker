@@ -10,28 +10,10 @@
 </script>
 
 <style>
-  :global(body) {
-    padding: 0;
-    overflow: hidden;
-  }
-  :global(body::after) {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    z-index: -1;
-    background-image: url("/imgs/taco.svg");
-    background-size: 124px;
-    background-position: 20 20;
-    background-repeat: space;
-    background-color: rgb(255, 247, 173);
-    transform: rotate(-45deg);
-  }
+
   main {
-    min-height: 100%;
-    min-width: 100%;
+    height: 100%;
+    width: 100%;
     padding: 0;
     margin: 0;
     display: flex;
@@ -67,6 +49,20 @@
     font-size: 1.17em;
     background-color: crimson;
   }
+
+  .new-recipe {
+    position: absolute;
+    bottom: 2em;
+  }
+
+  @media (max-height: 640px) {
+    .new-recipe {
+      bottom: 0;
+    }
+    main {
+      justify-content: flex-start;
+    }
+  }
 </style>
 
 <main>
@@ -76,6 +72,7 @@
   {:else if screen == screens.recipe && !getNewRecipe}
     <Recipe />
     <button
+      class="new-recipe"
       on:click={() => {
         getNewRecipe = true;
         getNewRecipe = false;
