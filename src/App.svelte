@@ -32,33 +32,7 @@
     text-align: center;
   }
 
-  button {
-    background: crimson;
-    color: white;
-    border-radius: 10px;
-    border: none;
-    padding: 1em 2em;
-    text-transform: uppercase;
-    transition: padding 150ms ease-in-out, font-size 100ms ease;
-  }
-
-  button:hover {
-    font-size: 1.2em;
-  }
-  button:hover:active {
-    font-size: 1.17em;
-    background-color: crimson;
-  }
-
-  .new-recipe {
-    position: absolute;
-    bottom: 2em;
-  }
-
-  @media (max-height: 640px) {
-    .new-recipe {
-      bottom: 0;
-    }
+  @media (max-height: 800px) {
     main {
       justify-content: flex-start;
     }
@@ -71,13 +45,5 @@
     <button on:click={() => (screen = screens.recipe)}>Get My Taco!</button>
   {:else if screen == screens.recipe && !getNewRecipe}
     <Recipe />
-    <button
-      class="new-recipe"
-      on:click={() => {
-        getNewRecipe = true;
-        getNewRecipe = false;
-      }}>
-      Get New Recipe
-    </button>
   {/if}
 </main>

@@ -91,3 +91,21 @@ body::after {
   background-color: rgb(255, 247, 173);
   transform: rotate(-45deg);
 }
+
+button {
+  background: #dc4314;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  transition: padding 150ms ease-in-out, font-size 100ms ease;
+}
+
+button:hover {
+  font-size: 1.2em;
+}
+button:hover:active {
+  font-size: 1.17em;
+  background-color: #dc4314;
+}
