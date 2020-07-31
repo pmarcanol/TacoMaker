@@ -38,6 +38,7 @@
   @media (max-height: 800px) {
     main {
       justify-content: flex-start;
+      overflow: hidden;
     }
   }
 </style>
