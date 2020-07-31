@@ -15,7 +15,7 @@
 
   async function getRandomRecipe() {
     loading = true;
-    const res = await fetch("http://taco-randomizer.herokuapp.com/random/");
+    const res = await fetch("https://taco-randomizer.herokuapp.com/random/");
     const tacoResult = await res.json();
     parseTaco(tacoResult);
   }
