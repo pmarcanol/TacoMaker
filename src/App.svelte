@@ -35,9 +35,11 @@
     justify-content: center;
     text-transform: uppercase;
   }
-  @media (max-height: 800px) {
+  @media (max-width: 800px) {
     main {
       justify-content: flex-start;
+    }
+    :global(html) {
       overflow: hidden;
     }
   }
